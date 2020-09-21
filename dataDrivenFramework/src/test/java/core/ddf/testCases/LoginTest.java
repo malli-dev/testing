@@ -26,8 +26,11 @@ public class LoginTest extends BaseTest{
 			throw new SkipException("runmode is 'n' ");
 		}
 		
+		test.log(Status.INFO, "opening"+data.get("browser"));
 		openBrowser(data.get("browser"));
+		test.log(Status.INFO, "browser is opened");
 		zohoLogin(data.get("userName"), data.get("password"));
+		test.log(Status.INFO, "logging out");
 		zohoLogout();
 		
 	}
